@@ -8,7 +8,7 @@
 body {
   display: flex;
 }
-body div.min-container {
+body div.main-container {
   align-items: center;
   text-align: center;
   width: 550px;
@@ -16,62 +16,62 @@ body div.min-container {
   border: 1px solid gray;
   border-radius: 0.5rem;
 }
-body div.min-container div.title-box h1 {
+body div.main-container div.title-box h1 {
   font-size: 2.5rem;
   font-weight: 900;
   text-decoration: underline;
 }
-body div.min-container div.title-box div.language-menu {
+body div.main-container div.title-box div.language-menu {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
 }
-body div.min-container div.title-box ul {
+body div.main-container div.title-box ul {
   display: flex;
   list-style-type: none;
 }
-body div.min-container div.title-box ul li a {
+body div.main-container div.title-box ul li a {
   text-decoration: none;
   font-size: 1.25rem;
   margin: 1rem 1rem;
 }
-body div.min-container div.intro {
+body div.main-container div.intro {
   display: flex;
   align-items: center;
   margin: 1rem auto;
   padding: 0 1rem;
 }
-body div.min-container div.intro .text {
+body div.main-container div.intro .text {
   text-align: left;
   font-size: 1rem;
   line-height: 2;
   margin-left: 0.5rem;
 }
-body div.min-container div.intro .img-box {
+body div.main-container div.intro .img-box {
   padding: 0.2rem;
 }
-body div.min-container div.intro .img-box img {
+body div.main-container div.intro .img-box img {
   width: 200px;
 }
-body div.min-container div.link-area {
+body div.main-container div.link-area {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0.25rem;
 }
-body div.min-container div.link-area div.link-box {
+body div.main-container div.link-area div.link-box {
   margin: 0.5rem;
   border-radius: 0.5rem;
   border: 1.5px dashed gray;
   width: 400px;
 }
-body div.min-container div.link-area div.link-box a {
+body div.main-container div.link-area div.link-box a {
   font-weight: 500;
   font-size: 2rem;
   text-decoration: none;
   color: black;
 }
-body div.min-container div.link-area div.link-box a img {
+body div.main-container div.link-area div.link-box a img {
   width: 2rem;
 }/*# sourceMappingURL=style.css.map */

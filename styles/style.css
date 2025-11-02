@@ -23,8 +23,6 @@ body div.main-container div.title-box h1 {
 }
 body div.main-container div.title-box div.language-menu {
   display: flex;
-  align-items: center;
-  text-align: center;
   justify-content: center;
 }
 body div.main-container div.title-box ul {
@@ -35,11 +33,12 @@ body div.main-container div.title-box ul li a {
   text-decoration: none;
   font-size: 1.25rem;
   margin: 1rem 1rem;
+  color: rgb(58, 58, 58);
 }
 body div.main-container div.intro {
   display: flex;
   align-items: center;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   padding: 0 1rem;
 }
 body div.main-container div.intro .text {
@@ -68,12 +67,12 @@ body div.main-container div.link-area div.link-box {
 }
 body div.main-container div.link-area div.link-box a {
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-decoration: none;
   color: black;
 }
 body div.main-container div.link-area div.link-box a img {
-  width: 2rem;
+  width: 1.25rem;
 }
 body div.main-container div.link-area div.link-box:hover {
   background-color: rgb(255, 179, 132);

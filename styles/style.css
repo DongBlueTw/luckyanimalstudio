@@ -74,4 +74,7 @@ body div.main-container div.link-area div.link-box a {
 }
 body div.main-container div.link-area div.link-box a img {
   width: 2rem;
+}
+body div.main-container div.link-area div.link-box:hover {
+  background-color: rgb(255, 179, 132);
 }/*# sourceMappingURL=style.css.map */

@@ -11,8 +11,8 @@ body {
 body div.main-container {
   align-items: center;
   text-align: center;
-  width: 550px;
-  margin: 5rem auto;
+  width: 360px;
+  margin: 3rem auto;
   border: 1px solid gray;
   border-radius: 0.5rem;
 }
@@ -44,7 +44,7 @@ body div.main-container div.intro {
 }
 body div.main-container div.intro .text {
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 2;
   margin-left: 0.5rem;
 }
@@ -52,7 +52,7 @@ body div.main-container div.intro .img-box {
   padding: 0.2rem;
 }
 body div.main-container div.intro .img-box img {
-  width: 200px;
+  width: 180px;
 }
 body div.main-container div.link-area {
   display: flex;
@@ -64,7 +64,7 @@ body div.main-container div.link-area div.link-box {
   margin: 0.5rem;
   border-radius: 0.5rem;
   border: 1.5px dashed gray;
-  width: 400px;
+  width: 345px;
 }
 body div.main-container div.link-area div.link-box a {
   font-weight: 500;

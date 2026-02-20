@@ -50,11 +50,19 @@ body div.main-container div.title-box div.language-menu {
 }
 body div.main-container div.title-box ul {
   display: flex;
+  align-items: center;
   list-style-type: none;
 }
+body div.main-container div.title-box ul li {
+  display: flex;
+  align-items: center;
+}
 body div.main-container div.title-box ul li a {
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   font-size: 1.1rem;
+  line-height: 1;
   margin: 0 1rem;
   color: #444;
 }

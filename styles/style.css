@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +8,45 @@
 
 body {
   display: flex;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/background.jfif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 body div.main-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   width: 360px;
-  margin: 3rem auto;
-  border: 1px solid gray;
-  border-radius: 0.5rem;
+  padding: 2.5rem 0;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+}
+body div.main-container div.title-box {
+  margin-bottom: 0.5rem;
 }
 body div.main-container div.title-box h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 900;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 4px solid #222;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  line-height: 1.1;
 }
 body div.main-container div.title-box div.language-menu {
   display: flex;
   justify-content: center;
+  margin-top: 0.8rem;
 }
 body div.main-container div.title-box ul {
   display: flex;
@@ -31,49 +54,67 @@ body div.main-container div.title-box ul {
 }
 body div.main-container div.title-box ul li a {
   text-decoration: none;
-  font-size: 1.25rem;
-  margin: 1rem 1rem;
-  color: rgb(58, 58, 58);
+  font-size: 1.1rem;
+  margin: 0 1rem;
+  color: #444;
 }
 body div.main-container div.intro {
   display: flex;
   align-items: center;
-  margin: 0.5rem auto;
+  margin: 1.5rem auto;
   padding: 0 1rem;
+}
+body div.main-container div.intro .img-box {
+  padding: 0;
+  flex-shrink: 0;
+}
+body div.main-container div.intro .img-box img {
+  width: 150px;
 }
 body div.main-container div.intro .text {
   text-align: left;
-  font-size: 0.7rem;
-  line-height: 2;
-  margin-left: 0.5rem;
-}
-body div.main-container div.intro .img-box {
-  padding: 0.2rem;
-}
-body div.main-container div.intro .img-box img {
-  width: 180px;
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: #222;
+  margin-left: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
 }
 body div.main-container div.link-area {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.25rem;
+  width: 100%;
+  padding-top: 0.5rem;
 }
 body div.main-container div.link-area div.link-box {
-  margin: 0.5rem;
-  border-radius: 0.5rem;
-  border: 1.5px dashed gray;
-  width: 345px;
+  margin: 0.4rem 0;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px dashed #b5b5b5;
+  width: 310px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
 }
 body div.main-container div.link-area div.link-box a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
-  color: black;
+  color: #111;
 }
 body div.main-container div.link-area div.link-box a img {
   width: 1.25rem;
+  margin-right: 0.4rem;
 }
 body div.main-container div.link-area div.link-box:hover {
-  background-color: rgb(255, 179, 132);
+  background-color: #e0f2fe; /* 清爽的淡藍色 */
+  border-color: #7dd3fc;
 }/*# sourceMappingURL=style.css.map */

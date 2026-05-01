@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="light" lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>吉祥物工作室 - 盧恩索引</title>
+
+    <!-- Scripts & Styles -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/tailwind-config.js"></script>
+    <link href="styles/style.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <div id="app">
+      <!-- TopAppBar -->
+      <header
+        class="bg-[#fff8f2] dark:bg-[#221b0b] font-['Newsreader'] tracking-[0.05em] uppercase docked full-width top-0 border-none bg-gradient-to-b from-[#fff2dd] to-transparent flat no shadows flex items-center justify-between px-6 h-16 w-full fixed z-50"
+      >
+        <div class="flex items-center gap-3">
+          <a :href="mascotStudioUrl">
+            <h1
+              class="text-xl font-bold tracking-widest text-[#8f4900] dark:text-[#af6018]"
+            >
+              吉祥物工作室
+            </h1>
+          </a>
+        </div>
+      </header>
+
+      <main class="pt-20 pb-28 px-4 min-h-screen">
+        <!-- Hero Section -->
+        <section class="mb-10 text-center" id="top">
+          <span
+            class="text-primary text-xs tracking-[0.3em] font-label font-bold uppercase block mb-2 opacity-70"
+            ><br
+          /></span>
+          <h2
+            class="font-headline text-5xl md:text-6xl text-on-background italic mb-4 leading-none"
+          >
+            盧恩符文索引
+          </h2>
+          <div
+            class="flex justify-center items-center gap-4 py-2 border-y border-outline-variant/20 mx-auto max-w-xs"
+          >
+            <span class="text-2xl text-primary-container font-serif"
+              >ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ</span
+            >
+          </div>
+        </section>
+
+        <!-- The Rune Grid -->
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+          <div
+            v-for="rune in runes"
+            :key="rune.id"
+            @click="goToDetail(rune.id)"
+            :class="['aspect-square border-none relative flex flex-col items-center justify-center p-2 transition-all duration-300 hover:bg-surface-container-high group cursor-pointer overflow-hidden bg-surface-container-lowest', rune.bgClass]"
+          >
+            <div
+              class="absolute inset-0 rune-gradient opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+
+            <div
+              class="w-[75%] h-[75%] relative z-10 flex flex-col items-center justify-center group-hover:scale-110 transition-transform duration-500"
+            >
+              <span
+                class="text-5xl md:text-6xl font-serif text-primary flex-1 flex items-center justify-center"
+                >{{ rune.symbol }}</span
+              >
+              <span
+                class="text-[1.5rem] font-label uppercase tracking-tighter text-on-surface-variant group-hover:text-primary transition-colors text-center leading-tight mt-1"
+              >
+                {{ rune.name }}<br />{{ rune.meaning }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Section -->
+        <section
+          class="mt-12 p-6 bg-surface-container shadow-sm relative overflow-hidden deckle-edge"
+        >
+          <div
+            class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"
+          ></div>
+          <h3 class="font-headline text-2xl text-primary mb-2">學者精選</h3>
+          <p
+            class="text-sm italic text-on-surface-variant leading-relaxed mb-4"
+          >
+            今日，月亮與
+            <span class="font-bold text-on-surface">智慧 (Ansuz)</span>
+            同步。這是適合溝通、神聖啟發以及挖掘隱藏卷軸的日子。
+          </p>
+          <div
+            class="flex items-center gap-2 cursor-pointer"
+            @click="goToDetail('ansuz')"
+          >
+            <span
+              class="text-xs font-label uppercase text-primary border-b border-primary/30"
+              >閱讀詳細條目</span
+            >
+            <span class="material-symbols-outlined text-sm text-primary"
+              >arrow_right_alt</span
+            >
+          </div>
+        </section>
+
+        <div class="mt-12 text-center opacity-20 pointer-events-none">
+          <span class="material-symbols-outlined text-8xl">flare</span>
+        </div>
+      </main>
+
+      <!-- BottomNavBar -->
+      <nav
+        class="bg-[#fff8f2] dark:bg-[#221b0b] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 border-t border-[#dac2b3]/15 shadow-[0_-4px_20px_rgba(34,27,11,0.06)]"
+      >
+        <a
+          class="flex flex-col items-center justify-center text-[#544338] dark:text-[#dac2b3] transition-transform duration-200 active:scale-95 hover:text-[#934b00] dark:hover:text-[#f0e1c7] flex-1"
+          :href="index.html"
+        >
+          <span class="material-symbols-outlined" data-icon="home">home</span>
+          <span
+            class="font-['Noto_Serif'] text-[10px] uppercase tracking-tighter mt-1"
+            >回工作室</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-[#8f4900] dark:text-[#af6018] font-bold scale-110 transition-transform duration-200 flex-1"
+          href="runes-index.html"
+        >
+          <span
+            class="material-symbols-outlined"
+            data-icon="menu_book"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >menu_book</span
+          >
+          <span
+            class="font-['Noto_Serif'] text-[10px] uppercase tracking-tighter mt-1"
+            >回索引頁</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-[#544338] dark:text-[#dac2b3] transition-transform duration-200 active:scale-95 hover:text-[#934b00] dark:hover:text-[#f0e1c7] flex-1"
+          href="#top"
+        >
+          <span class="material-symbols-outlined" data-icon="arrow_upward"
+            >arrow_upward</span
+          >
+          <span
+            class="font-['Noto_Serif'] text-[10px] uppercase tracking-tighter mt-1"
+            >返回頂部</span
+          >
+        </a>
+      </nav>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            runes: runesData,
+            mascotStudioUrl: "/", // 吉祥物工作室的首頁網址設定
+          };
+        },
+        methods: {
+          goToDetail(id) {
+            window.location.href = `detail.html?id=${id}`;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

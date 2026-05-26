@@ -23,5 +23,5 @@ const runesData = [
   { id: "inguz", symbol: "ᛝ", name: "Inguz", meaning: "種子", bgClass: "bg-surface-container-lowest" },
   { id: "dagaz", symbol: "ᛞ", name: "Dagaz", meaning: "黎明", bgClass: "bg-surface-container-lowest" },
   { id: "othala", symbol: "ᛟ", name: "Othala", meaning: "家庭", bgClass: "bg-surface-container-low" },
-  { id: "wyrd", symbol: "", name: "Wyrd", meaning: "籤王（空白符文）", bgClass: "bg-surface-container-lowest" }
+  { id: "wyrd", symbol: " ", name: "Wyrd", meaning: "籤王（空白符文）", bgClass: "bg-surface-container-lowest" }
 ];

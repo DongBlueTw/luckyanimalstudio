@@ -65,7 +65,7 @@
             v-for="rune in runes"
             :key="rune.id"
             @click="goToDetail(rune.id)"
-            :class="['aspect-square border-none relative flex flex-col items-center justify-center p-2 transition-all duration-300 hover:bg-surface-container-high group cursor-pointer overflow-hidden bg-surface-container-lowest', rune.bgClass]"
+            :class="['aspect-square border-2 border-primary rounded-xl relative flex flex-col items-center justify-center p-2 transition-all duration-300 hover:bg-surface-container-high group cursor-pointer overflow-hidden bg-surface-container-lowest', rune.bgClass]"
           >
             <div
               class="absolute inset-0 rune-gradient opacity-0 group-hover:opacity-100 transition-opacity"

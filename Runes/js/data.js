@@ -14,7 +14,7 @@ const runesData = [
   { id: "eihwaz", symbol: "ᛇ", name: "Eihwaz", meaning: "紫衫", bgClass: "bg-surface-container-lowest" },
   { id: "perthro", symbol: "ᛈ", name: "Perthro", meaning: "骰杯", bgClass: "bg-surface-container-lowest" },
   { id: "algiz", symbol: "ᛉ", name: "Algiz", meaning: "保護", bgClass: "bg-surface-container-low" },
-  { id: "sowilo", symbol: "ᛊ", name: "Sowilo", meaning: "太陽", bgClass: "bg-surface-container-lowest" },
+  { id: "sowilo", symbol: "ᛋ", name: "Sowilo", meaning: "太陽", bgClass: "bg-surface-container-lowest" },
   { id: "tiwaz", symbol: "ᛏ", name: "Tiwaz", meaning: "戰神", bgClass: "bg-surface-container-lowest" },
   { id: "berkana", symbol: "ᛒ", name: "Berkana", meaning: "樺樹", bgClass: "bg-surface-container-low" },
   { id: "ehwaz", symbol: "ᛖ", name: "Ehwaz", meaning: "駿馬", bgClass: "bg-surface-container-lowest" },

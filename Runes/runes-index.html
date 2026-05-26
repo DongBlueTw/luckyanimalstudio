@@ -89,6 +89,7 @@
 
         <!-- Featured Section -->
         <section
+          v-if="featuredRune"
           class="mt-12 p-6 bg-surface-container shadow-sm relative overflow-hidden deckle-edge"
         >
           <div
@@ -99,12 +100,12 @@
             class="text-sm italic text-on-surface-variant leading-relaxed mb-4"
           >
             今日，月亮與
-            <span class="font-bold text-on-surface">智慧 (Ansuz)</span>
-            同步。這是適合溝通、神聖啟發以及挖掘隱藏卷軸的日子。
+            <span class="font-bold text-on-surface">{{ featuredRune.meaning }} ({{ featuredRune.name }})</span>
+            同步。{{ featuredAdvice }}
           </p>
           <div
             class="flex items-center gap-2 cursor-pointer"
-            @click="goToDetail('ansuz')"
+            @click="goToDetail(featuredRune.id)"
           >
             <span
               class="text-xs font-label uppercase text-primary border-b border-primary/30"
@@ -127,7 +128,7 @@
       >
         <a
           class="flex flex-col items-center justify-center text-[#544338] dark:text-[#dac2b3] transition-transform duration-200 active:scale-95 hover:text-[#934b00] dark:hover:text-[#f0e1c7] flex-1"
-          href="../index.html"
+          :href="mascotStudioUrl"
         >
           <span class="material-symbols-outlined" data-icon="home">home</span>
           <span
@@ -173,8 +174,45 @@
         data() {
           return {
             runes: runesData,
-            mascotStudioUrl: "../index.html", // 吉祥物工作室的首頁網址設定
+            mascotStudioUrl: "/", // 吉祥物工作室的首頁網址設定
+            featuredRune: null,
+            featuredAdvice: "",
           };
+        },
+        mounted() {
+          const today = new Date();
+          const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+          const validRunes = this.runes.filter(r => r.id !== 'wyrd');
+          const index = dateSeed % validRunes.length;
+          this.featuredRune = validRunes[index];
+
+          const advices = {
+            fehu: "這是豐收與財富流動的吉日。適合啟動新企劃，或對身邊的資源表達感謝。",
+            uruz: "蠻牛的能量在今日高漲。適合進行需要體力與堅定意志的工作，突破眼前的障礙。",
+            thurisaz: "防禦與警覺是今日的關鍵。在做決定前請三思，避免衝動行事，保護好自己的界線。",
+            ansuz: "這是適合溝通、神聖啟發以及挖掘隱藏知識的日子。多留意身邊捎來的訊息。",
+            raido: "旅程與秩序的律動在今日展開。適合規劃行程、整理思緒，或是踏出改變的第一步。",
+            kenaz: "火炬照亮了未知的道路。今日你的直覺與創造力非常敏銳，適合進行藝術或研發工作。",
+            gebo: "平衡與給予是今日的主題。適合與夥伴交流、分享收穫，建立互利共榮的關係。",
+            wunjo: "喜悅與和諧的氛圍圍繞著你。適合慶祝小小的成就，與喜愛的人共度美好時光。",
+            hagalaz: "風暴可能帶來短暫的混亂，但也是重生的契機。保持彈性，接受無法控制的變革。",
+            nauthiz: "面臨考驗時，更能淬鍊出內心的耐力。今日請專注於「核心需求」，斷捨離不必要的負擔。",
+            isa: "今日適合靜止與沉澱。不宜急躁進取，讓混亂的思緒冷卻，靜待冰雪融化的時機。",
+            jera: "長期耕耘的成果正在慢慢熟成。保持耐心與規律的步調，時間會給予應有的回報。",
+            eihwaz: "紫衫象徵著韌性與轉化。今日你擁有克服困難的隱形力量，連結過去與未來的智慧。",
+            perthro: "命運的骰杯已經搖起，充滿了未知與機緣。保持開放的心態，迎接生命中的驚喜與啟示。",
+            algiz: "神聖的守護力量與你同在。信任你的直覺避開危險，這是一個感到安心與平靜的日子。",
+            sowilo: "太陽的光芒照耀前路，帶來無比的成功與活力。展現自我，主動追求你的目標吧！",
+            tiwaz: "正義與勇氣是你的盾牌。堅持你的原則，公平待人，你將在競爭或挑戰中獲得勝利。",
+            berkana: "樺樹帶來溫暖的滋養與新生氣息。適合照顧身心、照料植物，或是孵育新的創意種子。",
+            ehwaz: "信任與合作是今日成功的關鍵。與夥伴默契配合，一同朝著共同目標穩定前行。",
+            mannaz: "今日適合關注人際連結與自我認知。多傾聽他人的聲音，在群體中找到自己的定位。",
+            laguz: "水流的直覺與情感在今日流淌。順應直覺與情緒的起伏，進行深度冥想或心靈洗滌。",
+            inguz: "種子在黑暗中默默積蓄能量。適合專注於內部整合與準備，靜待破土而出的那一刻。",
+            dagaz: "黎明已至，黑暗散去。今日將帶來思維的突破與全新的轉機，勇敢迎接光明的改變。",
+            othala: "家庭、傳承與安全的港灣是今日的重心。適合與家人聚會，或整理屬於自己的溫馨空間。"
+          };
+          this.featuredAdvice = advices[this.featuredRune.id] || "這是個充滿未知與神聖啟示的一天。";
         },
         methods: {
           goToDetail(id) {

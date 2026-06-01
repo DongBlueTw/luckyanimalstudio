@@ -77,7 +77,8 @@
               class="w-[85%] h-[85%] relative z-10 flex flex-col items-center justify-center group-hover:scale-110 transition-transform duration-500"
             >
               <span
-                class="text-7xl md:text-8xl font-['Noto_Sans_Runic'] text-primary flex-1 flex items-center justify-center"
+                :class="rune.id === 'wyrd' ? 'font-sans opacity-40 text-6xl' : 'font-[\'Noto_Sans_Runic\'] text-7xl md:text-8xl'"
+                class="text-primary flex-1 flex items-center justify-center"
                 >{{ rune.symbol }}</span
               >
             </div>

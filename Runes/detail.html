@@ -12,6 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;family=Noto+Serif:wght@400;700&amp;display=swap"
       rel="stylesheet"
     />
+    <!-- 新增支援盧恩符文的字型 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Runic&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
@@ -51,7 +53,7 @@
           ></div>
 
           <div
-            class="relative z-10 w-[90%] max-w-[400px] flex items-center justify-center mb-4"
+            class="relative z-10 w-[90%] max-w-[400px] flex flex-col items-center justify-center mb-4"
           >
             <!-- Main Rune Image from runes_images folder -->
             <img
@@ -65,7 +67,7 @@
               v-if="imageError && currentRune"
               class="w-full aspect-[2/3] flex flex-col items-center justify-center text-primary border-2 border-dashed border-outline-variant rounded-lg bg-surface-container-lowest"
             >
-              <span class="text-6xl font-serif" v-if="currentRune.id !== 'wyrd'"
+              <span class="text-6xl font-['Noto_Sans_Runic']" v-if="currentRune.id !== 'wyrd'"
                 >{{ currentRune.symbol }}</span
               >
               <div
@@ -77,6 +79,14 @@
                 >請放置 runes_images/{{ currentRune.id }}.png</span
               >
             </div>
+
+            <!-- 長按儲存圖片提示 -->
+            <p
+              v-if="currentRune && !imageError"
+              class="text-xs text-on-surface-variant/70 mt-4 tracking-widest font-label uppercase"
+            >
+              ✨ 長按圖片可保存至相簿 ✨
+            </p>
           </div>
 
           <!-- Decorative Paper Tear Effect -->
@@ -86,16 +96,8 @@
         </section>
 
         <!-- Content Canvas -->
-        <div class="px-6 relative z-20 mt-8">
-          <div class="text-center mb-10" v-if="currentRune">
-            <h2 class="text-4xl font-headline text-primary mb-2">
-              {{ currentRune.meaning }}
-            </h2>
-            <p class="text-sm text-on-surface-variant font-label tracking-wide">
-              {{ currentRune.name }}
-            </p>
-          </div>
-          <div class="text-center mb-10" v-else>
+        <div class="px-6 relative z-20 mt-8" v-if="!currentRune">
+          <div class="text-center mb-10">
             <p class="text-body text-error">
               找不到該符文資料，請返回索引頁重新選擇。
             </p>

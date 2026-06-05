@@ -58,7 +58,7 @@
             <!-- Main Rune Image from runes_images folder -->
             <img
               v-if="currentRune && !imageError"
-              :src="`runes_images/${currentRune.id === 'raido' ? 'raidho' : currentRune.id}.png`"
+              :src="`runes_images/${currentRune.id}.png`"
               @error="onImageError"
               alt="Rune Image"
               class="w-full h-auto object-contain drop-shadow-[0_10px_30px_rgba(34,27,11,0.15)]"
